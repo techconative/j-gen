@@ -1,36 +1,12 @@
 export class DSLInterpreter {
     constructor(customOperators = {}) {
         this.operators = {
-            'add': this.add,
-            'resolve': this.resolve,
-            'bind': this.bind,
-            'delete': this.delete,
             ...customOperators
         };
     }
 
-    add(context, params) {
-        return params.reduce((acc, curr) => acc + curr, 0);
-    }
-
-    resolve(context, params) {
-        return params[0];
-    }
-
-    bind(context, params) {
-        return params[0];
-    }
-
-    delete(context, params) {
-        return null;
-    }
-
     isOperator(json) {
         return json && typeof json === 'object' && Object.keys(this.operators).includes(Object.keys(json)[0]);
-    }
-
-    setOperator(name, func) {
-        this.operators[name] = func;
     }
 
     compile(json) {
