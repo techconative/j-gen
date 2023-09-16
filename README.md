@@ -9,7 +9,7 @@ achieved as a result of a given prompt.
 
 The language has to be of below nature,
 
-- Simple.
+- Simple(not just Easy).
 - Consistent.
 - Infinitely recursive.
 
@@ -54,8 +54,10 @@ let compiled = interpreter.compile(dslJson);
 
 ```
 interpreter.run(compiled, null);
-// This should retur 6
+// This should return 6
 ```
+
+For more details refer to the [test file](jgentest.js).
 
 ## Running tests:
 
